@@ -1,7 +1,7 @@
 <template>
   <MCard class="m-cont">
     <template #header>
-      <div>头部内容头部内容头部内容</div>
+      <div class="head">头部内容头部内容头部内容</div>
     </template>
     默认内容
   </MCard>
@@ -13,9 +13,12 @@ import MCard from "@/components/card/MCard.vue";
 
 <style scoped lang="scss">
 .m-cont {
-  width: 300px;
+  width: 400px;
   height: 300px;
   border: 1px solid rgb(232, 226, 226);
   margin: 100px auto;
+  .head {
+    height: 100px;
+  }
 }
 </style>
