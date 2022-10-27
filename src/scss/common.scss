@@ -1,0 +1,105 @@
+.v-enter-active,
+.v-leave-active {
+	transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+	opacity: 0;
+}
+
+/* 美化滚动条 */
+/* 滚动槽 */
+::-webkit-scrollbar {
+	width: 3px;
+	height: 3px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.06);
+	-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.12);
+	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+//lifan minxin
+@mixin absoluteCenter {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin flexRow($justify: null, $items: null, $content: null) {
+	display: flex;
+
+	@if $justify {
+		justify-content: $justify;
+	}
+
+	@if $items {
+		align-items: $items;
+	}
+
+	@if $content {
+		align-items: $items;
+	}
+}
+
+@mixin flexCol($justify: null, $items: null, $content: null) {
+	@include flexRow($justify, $items, $content);
+	flex-direction: column;
+}
+
+@mixin textElipsis($rows: 1) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $rows;
+	-webkit-box-orient: vertical;
+}
+
+@mixin title {
+	font-size: $font-size-sm;
+	line-height: $line-height-sm;
+	height: 38px;
+	color: $font-color-primary;
+}
+
+@include block(title) {
+	@include title;
+}
+
+@mixin sub-title {
+	font-size: $font-size-sm-xs;
+	line-height: $line-height-xs;
+	height: 14px;
+	color: $font-color-regular;
+	@content;
+}
+
+@include block(sub-title) {
+	@include sub-title;
+}
+.u-tabbar__content {
+	background: linear-gradient(180deg, #ffc0c0 1%, #ff7575 100%);
+}
+
+.u-form-item__body__left__content__label {
+	font-weight: $font-weight-max;
+}
+view,
+text {
+	font-family: $font-family-main;
+}
+
+.u-button--mini {
+	height: 28px !important;
+}

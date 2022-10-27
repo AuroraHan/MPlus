@@ -10,4 +10,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // sass 配置
+  css: {
+    preprocessorOptions: {
+      // 导入scss预编译程序
+      scss: {
+        additionalData: `@import "@/scss/index.scss";`,
+      },
+    },
+  },
 });

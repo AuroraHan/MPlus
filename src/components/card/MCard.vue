@@ -1,4 +1,3 @@
-<!--  -->
 <template>
   <div class="m-content">
     <div class="m-content__head">
@@ -20,15 +19,15 @@ defineProps({
   },
 });
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 $shadow-always: 0px 0px 5px 3px #f4eded;
 $shadow-never: none;
 
-.m-content {
+@include block(content) {
   &:hover {
     box-shadow: $shadow-always;
   }
-  .m-content__head {
+  @include element(head) {
     border-bottom: 1px solid red;
   }
 }

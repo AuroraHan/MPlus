@@ -1,0 +1,101 @@
+// 主题颜色
+$color-primary: #409eff;
+$color-primary-secondary: #79bbff;
+$color-primary-blue: #8c7bfd;
+
+$color-success: #5ac725;
+$color-success-secondary: #95d475;
+$color-success-green: #11aa66;
+
+$color-warning: #ffa900;
+$color-warning-secondary: #eebe77;
+$color-warning-dark: #ff8f1f;
+$color-warning-yellow: #ffaa44;
+$color-warning-yellow-font:#FFCA04;
+$color-warning-card-bg: #fde1cc;
+
+$color-danger: #e32322;
+$color-danger-dark: #d21e29;
+$color-danger-secondary: #f95e5a;
+$color-danger-three: #f9c5c5;
+$color-danger-tint: #f29999;
+$color-error: #fc371f;
+$color-danger-pink:#FDE1CC;
+
+$color-info: #909399;
+$color-info-secondary: #b1b3b8;
+$color-info-light: #f5f5f5;
+
+// 字体颜色
+$font-basic-black: #000;
+$font-basic-white: #fff;
+$font-basic-main: #333333;
+$font-color-primary: #303133;
+$font-color-regular: #606266;
+$font-color-regular-min: #666666;
+$font-color-secondary: #909399;
+$font-color-secondary-main: #999999;
+$font-color-placeholder: #a8abb2;
+$font-color-disabled: #c0c4cc;
+$font-color-white: #fff;
+$font-color-tint: #eee;
+$font-color-text: #666;
+$font-color-gray: #ccc;
+$font-color-gray-min:#787878;
+
+
+// 边框颜色
+$border-color-darker: #cdd0d6;
+$border-color-dark: #d4d7de;
+$border-color-lighter: #ebeef5;
+
+// 字体大小
+$font-size-xxl: 36px;
+$font-size-ml: 32px;
+$font-size-max: 28px;
+$font-size-xl: 24px;
+$font-size-lg-xl: 20px;
+$font-size-lg: 18px;
+$font-size-md-lg: 17px;
+$font-size-md: 16px;
+$font-size-sm-md: 15px;
+$font-size-sm: 14px;
+$font-size-sm-xs: 13px;
+$font-size-xs: 12px;
+$font-size-xss: 10px;
+
+// 行高
+$line-height-sm: 19px;
+$line-height-xs: 14px;
+// 间隔的距离
+$space-max: 40px;
+$space-xl: 30px;
+$space-lg-xl: 25px;
+$space-lg: 20px;
+$space-md-xl: 15px;
+$space-md: 12px;
+$space-sm: 10px;
+$space-xm: 8px;
+$space-xs: 5px;
+$space-min: 3px;
+
+// 字体粗细
+$font-weight-max: 600;
+$font-weight-xl: 500;
+$font-weight-lg: 400;
+$font-weight-md: 300;
+$font-weight-sm: 200;
+$font-weight-xs: 100;
+
+// 阴影盒子
+$box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
+
+/* 圆角 */
+$radius-default: 0rpx;
+$radius-arc: 8rpx;
+$radius-middle: 8rpx;
+$radius-circle: 100rpx;
+
+/* 字体序列 */
+$font-family-main: Microsoft YaHei, PingFang SC, Arial, \\5fae\8f6f\96c5\9ed1,
+	\\5b8b\4f53, simsun, sans-serif;
