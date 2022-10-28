@@ -1,5 +1,5 @@
 <template>
-  <MCard class="m-cont">
+  <MCard class="m-cont" shadow="hover">
     <template #header>
       <div class="head">头部内容头部内容头部内容</div>
     </template>
