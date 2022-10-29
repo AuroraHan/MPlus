@@ -1,18 +1,18 @@
 <template>
-  <MCard class="m-cont" shadow="hover">
+  <MCard shadow="hover" :class="[ns.b()]">
     <template #header>
-      <div class="head">头部内容头部内容头部内容</div>
+      <div>
+        头部内容头部内容头部内容内容头部内容头部内容内容头部内容头部内容内容头部内容头部内容
+      </div>
     </template>
     默认内容
   </MCard>
-  <div :class="[ns.b()]">
-    <div :class="[ns.b('childer')]"></div>
-    <div :class="[ns.b('childer')]"></div>
-  </div>
+  <MyTest></MyTest>
 </template>
 
 <script setup lang="ts">
 import MCard from "@/components/card/MCard.vue";
+import MyTest from "@/components/mytest/index.vue";
 import { useNamespace } from "@/hooks/use-namespace";
 
 const ns = useNamespace("main");
@@ -20,23 +20,9 @@ const ns = useNamespace("main");
 
 <style scoped lang="scss">
 @include block(main) {
-  width: 200px;
-  height: 200px;
-  background-color: pink;
-  @include block(main-childer) {
-    width: 100px;
-    height: 100px;
-    background-color: $border-color-darker;
-  }
-}
-
-.m-cont {
   width: 400px;
   height: 300px;
   border: 1px solid rgb(232, 226, 226);
   margin: 100px auto;
-  .head {
-    height: 100px;
-  }
 }
 </style>

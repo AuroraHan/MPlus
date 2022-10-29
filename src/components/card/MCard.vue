@@ -1,6 +1,6 @@
 <template>
   <div :class="[ns.b('content'), ns.is(`${shadow}-shadow`)]">
-    <div class="mh-content__head">
+    <div :class="[ns.e('head')]">
       <slot name="header"></slot>
     </div>
     <div>
@@ -34,6 +34,13 @@ $shadow-never: none;
       box-shadow: $shadow-always;
     }
   }
+
+  @include when(always-shadow) {
+    box-shadow: $shadow-always;
+  }
+}
+
+@include block(card) {
   @include element(head) {
     border-bottom: 1px solid red;
   }

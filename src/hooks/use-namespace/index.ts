@@ -100,3 +100,12 @@ export const useNamespace = (block: string) => {
     cssVarBlockName,
   };
 };
+
+// 'ep-table', // b()
+// 'ep-table-body', // b('body')
+// 'ep-table__content', // e('content')
+// 'ep-table--active', // m('active')
+// 'ep-table-content__active', // be('content', 'active')
+// 'ep-table__content--active', // em('content', 'active')
+// 'ep-table-body__content--active', // bem('body', 'content', 'active')
+// 'is-focus', // is('focus')
