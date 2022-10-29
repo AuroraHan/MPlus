@@ -3,14 +3,13 @@
     <div :class="[ns.e('head')]">
       <slot name="header"></slot>
     </div>
-    <div>
+    <div :class="[ns.e('body')]">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, toRefs, onBeforeMount, onMounted } from "vue";
 import { useNamespace } from "@/hooks/use-namespace";
 
 const ns = useNamespace("card");
@@ -24,9 +23,8 @@ defineProps({
 });
 </script>
 <style lang="scss">
-$shadow-always: 0px 0px 5px 3px #f4eded;
-$shadow-never: none;
-
+$shadow-always: 0px 0px 12px rgba(0, 0, 0, 0.12);
+$card-padding: 20px;
 @include block(card-content) {
   @include when(hover-shadow) {
     &:hover,
@@ -43,6 +41,9 @@ $shadow-never: none;
 @include block(card) {
   @include element(head) {
     border-bottom: 1px solid red;
+  }
+  @include element(body) {
+    padding: $card-padding;
   }
 }
 </style>
