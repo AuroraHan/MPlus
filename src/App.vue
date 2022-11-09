@@ -7,11 +7,11 @@
     </template>
     默认内容
   </MCard> -->
-  <MAvatar size="100px" shape="square" :src="state.url"></MAvatar>
+  <!-- <MAvatar size="100px" shape="square" :src="state.url"></MAvatar>
   <br />
   <MAvatar shape="circle">User</MAvatar>
-  <br />
-  <MAvatar
+  <br /> -->
+  <!-- <MAvatar
     size="100px"
     shape="square"
     src="https://empty"
@@ -20,7 +20,8 @@
     <img
       src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
     />
-  </MAvatar>
+  </MAvatar> -->
+  <MyTest></MyTest>
 </template>
 
 <script setup lang="ts">
