@@ -16,17 +16,25 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, computed, ref } from "vue";
+import { ref } from "vue";
 import { useNamespace } from "@/hooks/use-namespace";
 
 const ns = useNamespace("test");
-console.log(ns.bm('main', 'ac'))
+
+console.log(ns.b());
+console.log(ns.b('test'));
+console.log(ns.e('emels'));
+console.log(ns.m('mod'));
+console.log(ns.be('bbb', 'eee'))
+console.log(ns.bm('bbb', 'mmm'))
+console.log(ns.em('eee', 'mmm'))
+console.log(ns.bem('bb', 'ee', 'mm'))
+
 
 const bottomCss = ref([ns.bem('main', 'describe', 'bottom')])
 const addColor = () => {
   bottomCss.value.push(ns.bm('main', 'ac'))
 }
-
 
 </script>
 <style scoped lang="scss">
