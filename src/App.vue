@@ -7,7 +7,7 @@
     </template>
     默认内容
   </MCard> -->
-  <MAvatar size="100px" shape="square" :src="state.url"></MAvatar>
+  <!-- <MAvatar size="100px" shape="square" :src="state.url"></MAvatar>
   <br />
   <MAvatar shape="circle">User</MAvatar>
   <br />
@@ -20,7 +20,8 @@
     <img
       src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
     />
-  </MAvatar>
+  </MAvatar> -->
+  <FatherVue></FatherVue>
 </template>
 
 <script setup lang="ts">
@@ -28,6 +29,7 @@ import { reactive } from "vue";
 import MCard from "@/components/card/MCard.vue";
 import MyTest from "@/components/mytest/index.vue";
 import MAvatar from "@/components/avatar/MAvatar.vue";
+import FatherVue from "@/myTest/attrs/Father.vue";
 import { useNamespace } from "@/hooks/use-namespace";
 
 const ns = useNamespace("main");
@@ -36,7 +38,9 @@ const state = reactive({
   url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
 });
 
-const errorHandler = () => true;
+const errorHandler = (e: Event) => {
+  console.log(e);
+};
 </script>
 
 <style scoped lang="scss">
