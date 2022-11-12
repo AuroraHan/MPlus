@@ -1,12 +1,13 @@
 <template>
-  <!-- <MCard shadow="hover" :class="[ns.b()]">
+  <MCard shadow="hover" :class="[ns.b()]">
     <template #header>
       <div>
-        头部内容头部内容头部内容内容头部内容头部内容内容头部内容头部内容内容头部内容头部内容
+        头部内容头部内头部内容内容头部内容头部内容内容头部内容头部内容内容头部内容头部内容
       </div>
     </template>
     默认内容
-  </MCard> -->
+  </MCard>
+  -->
   <!-- <MAvatar size="100px" shape="square" :src="state.url"></MAvatar>
   <br />
   <MAvatar shape="circle">User</MAvatar>
