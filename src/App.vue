@@ -1,18 +1,5 @@
 <template>
-  <MCard shadow="hover" :class="[ns.b()]">
-    <template #header>
-      <div>
-        头部内容头部内头部内容内容头部内容头部内容内容头部内容头部内容内容头部内容头部内容
-      </div>
-    </template>
-    默认内容
-  </MCard>
-  -->
-  <!-- <MAvatar size="100px" shape="square" :src="state.url"></MAvatar>
-  <br />
-  <MAvatar shape="circle">User</MAvatar>
-  <br />
-  <MAvatar
+  <!-- <MAvatar
     size="100px"
     shape="square"
     src="https://empty"
@@ -22,15 +9,13 @@
       src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
     />
   </MAvatar> -->
-  <FatherVue></FatherVue>
+  <MyImg></MyImg>
 </template>
 
 <script setup lang="ts">
 import { reactive, readonly } from "vue";
-import MCard from "@/components/card/MCard.vue";
-import MyTest from "@/components/mytest/index.vue";
 import MAvatar from "@/components/avatar/MAvatar.vue";
-import FatherVue from "@/myTest/attrs/Father.vue";
+import MyImg from "@/myTest/lazy/MyImg.vue";
 import { useNamespace } from "@/hooks/use-namespace";
 
 const ns = useNamespace("main");
@@ -38,16 +23,6 @@ const ns = useNamespace("main");
 const state = reactive({
   url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
 });
-
-const student = reactive({
-  name: "zs",
-  age: 12,
-});
-
-const user = readonly(student);
-
-console.dir(student);
-console.log(readonly(student));
 
 const errorHandler = (e: Event) => {
   console.log(e);
