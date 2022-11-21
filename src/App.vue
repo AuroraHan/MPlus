@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, readonly } from "vue";
 import MCard from "@/components/card/MCard.vue";
 import MyTest from "@/components/mytest/index.vue";
 import MAvatar from "@/components/avatar/MAvatar.vue";
@@ -38,6 +38,16 @@ const ns = useNamespace("main");
 const state = reactive({
   url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
 });
+
+const student = reactive({
+  name: "zs",
+  age: 12,
+});
+
+const user = readonly(student);
+
+console.dir(student);
+console.log(readonly(student));
 
 const errorHandler = (e: Event) => {
   console.log(e);
