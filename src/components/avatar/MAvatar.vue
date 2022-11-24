@@ -73,7 +73,7 @@ $avatar-bg-color: #c0c4cc;
   height: v-bind("props.size");
   font-size: 14px;
 
-  > img {
+  >img {
     display: block;
     height: 100%;
   }
