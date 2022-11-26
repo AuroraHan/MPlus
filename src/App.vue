@@ -9,13 +9,15 @@
       src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
     />
   </MAvatar> -->
-  <MyImg></MyImg>
+  <!-- <MyImg></MyImg> -->
+  <MySlider :on-success="success" :onFail="fail"></MySlider>
 </template>
 
 <script setup lang="ts">
 import { reactive, readonly } from "vue";
 import MAvatar from "@/components/avatar/MAvatar.vue";
 import MyImg from "@/myTest/lazy/MyImg.vue";
+import MySlider from "@/components/slider/MSlider.vue";
 import { useNamespace } from "@/hooks/use-namespace";
 
 const ns = useNamespace("main");
@@ -26,6 +28,14 @@ const state = reactive({
 
 const errorHandler = (e: Event) => {
   console.log(e);
+};
+
+const success = () => {
+  console.log(1111);
+};
+
+const fail = () => {
+  console.log(2222);
 };
 </script>
 
