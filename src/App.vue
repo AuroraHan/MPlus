@@ -10,7 +10,8 @@
     />
   </MAvatar> -->
   <!-- <MyImg></MyImg> -->
-  <MySlider :on-success="success" :onFail="fail"></MySlider>
+  <!-- <MySlider :on-success="success" :onFail="fail"></MySlider> -->
+  <MyDropDown :option-data="dropData.dropArr" width="300px" size="18px"></MyDropDown>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +19,7 @@ import { reactive, readonly } from "vue";
 import MAvatar from "@/components/avatar/MAvatar.vue";
 import MyImg from "@/myTest/lazy/MyImg.vue";
 import MySlider from "@/components/slider/MSlider.vue";
+import MyDropDown from "@/components/dropdown/MDropdown.vue"
 import { useNamespace } from "@/hooks/use-namespace";
 
 const ns = useNamespace("main");
@@ -25,6 +27,16 @@ const ns = useNamespace("main");
 const state = reactive({
   url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
 });
+
+const dropData = reactive({
+  dropArr: [
+    { title: "测试列表1", id: 0 },
+    { title: "测试列表2", id: 0 },
+    { title: "测试列表3", id: 0 },
+    { title: "测试列表4", id: 0 }
+
+  ]
+})
 
 const errorHandler = (e: Event) => {
   console.log(e);
