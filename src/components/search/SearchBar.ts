@@ -1,6 +1,11 @@
 import { h, render } from 'vue';
 import SearchBar from './SearchBar.vue';
 
+export interface SelectItem {
+  id: number;
+  title: string;
+}
+
 //搜索框控制
 class SeachBarCreator {
   container: HTMLDivElement;

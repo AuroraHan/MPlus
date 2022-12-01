@@ -88,18 +88,15 @@
 @include block(sub-title) {
 	@include sub-title;
 }
-.u-tabbar__content {
-	background: linear-gradient(180deg, #ffc0c0 1%, #ff7575 100%);
+
+body,html{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	padding-inline-start:0px;
+}
+li{
+	list-style: none
 }
 
-.u-form-item__body__left__content__label {
-	font-weight: $font-weight-max;
-}
-view,
-text {
-	font-family: $font-family-main;
-}
-
-.u-button--mini {
-	height: 28px !important;
-}
