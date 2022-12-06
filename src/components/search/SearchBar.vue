@@ -38,6 +38,7 @@ const submit = () => {
     position: absolute;
     top: 20%;
     left: 36%;
+    z-index: 99;
 
     @include element(container) {
         margin-top: 4px;

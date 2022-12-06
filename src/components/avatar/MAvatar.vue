@@ -5,7 +5,18 @@
     <slot v-else></slot>
   </span>
 </template>
-
+<!-- 
+ <MAvatar
+    size="100px"
+    shape="square"
+    src="https://empty"
+    @error="errorHandler"
+  >
+    <img
+      src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
+    />
+  </MAvatar>
+ -->
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { AvatarSizeMap } from "./type";

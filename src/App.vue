@@ -1,25 +1,27 @@
 <template>
-  <!-- <MAvatar
-    size="100px"
-    shape="square"
-    src="https://empty"
-    @error="errorHandler"
-  >
-    <img
-      src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"
-    />
-  </MAvatar> -->
-  <!-- <MyImg></MyImg> -->
-  <MySlider :on-success="success" :onFail="fail"></MySlider>
-  <!-- <MyDropDown :option-data="dropData.dropArr" width="300px" size="18px"></MyDropDown> -->
-  <!-- <button @click="openSeachBar">显示搜索框</button>
-  <button @click="closeSeachBar">隐藏搜索框搜索框</button> -->
+  <el-row :gutter="10">
+    <!-- 左侧列 -->
+    <el-col :span="6">
+      <div :class="[ns.e('left')]">121</div>
+    </el-col>
+
+    <!-- 中间列 -->
+    <el-col :span="12">
+      <div :class="[ns.e('content')]">
+        <!-- <MySlider :on-success="success" :onFail="fail"></MySlider> -->
+        <!-- <MyDropDown :option-data="dropData.dropArr" width="300px" size="18px"></MyDropDown> -->
+      </div>
+    </el-col>
+
+    <!-- 右侧列 -->
+    <el-col :span="6">
+      <div :class="[ns.e('right')]">12</div>
+    </el-col>
+  </el-row>
 </template>
 
 <script setup lang="ts">
 import { reactive, onMounted } from "vue";
-import MAvatar from "@/components/avatar/MAvatar.vue";
-import MyImg from "@/myTest/lazy/MyImg.vue";
 import MySlider from "@/components/slider/MSlider.vue";
 import MyDropDown from "@/components/dropdown/MDropdown.vue"
 import { useNamespace } from "@/hooks/use-namespace";
@@ -30,11 +32,11 @@ const ns = useNamespace("main");
 //全局搜索
 const { openSeachBar, closeSeachBar } = useSeach
 onMounted(() => {
-  // window.addEventListener('keydown', (e) => {
-  //   if (e.altKey && e.key === 'k') {
-  //     openSeachBar();
-  //   }
-  // })
+  window.addEventListener('keydown', (e) => {
+    if (e.altKey && e.key === 'k') {
+      openSeachBar();
+    }
+  })
 })
 
 const state = reactive({
@@ -51,10 +53,6 @@ const dropData = reactive({
   ]
 })
 
-const errorHandler = (e: Event) => {
-  console.log(e);
-};
-
 const success = () => {
   console.log(1111);
 };
@@ -66,9 +64,19 @@ const fail = () => {
 
 <style scoped lang="scss">
 @include block(main) {
-  width: 400px;
-  height: 300px;
-  border: 1px solid rgb(232, 226, 226);
-  margin: 100px auto;
+  @include element(left) {
+    background-color: #f8e3c5;
+    height: 70vh;
+  }
+
+  @include element(content) {
+    background-color: darkorange;
+    height: 100vh;
+  }
+
+  @include element(right) {
+    background-color: #d1edc4;
+    height: 70vh;
+  }
 }
 </style>
