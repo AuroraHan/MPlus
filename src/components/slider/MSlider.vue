@@ -86,7 +86,6 @@ interface IProps {
 }
 
 const props = withDefaults(defineProps<IProps>(), {
-<<<<<<< HEAD
   width: 320,
   visible: true,
   height: 160,
@@ -95,16 +94,6 @@ const props = withDefaults(defineProps<IProps>(), {
   r: 9,
   imgUrl: "",
   text: "",
-=======
-    width: 320,
-    visible: true,
-    height: 160,
-    refreshIcon: 'http://cdn.dooring.cn/dr/icon12.png',
-    l: 42,
-    r: 9,
-    imgUrl: '',
-    text: '',
->>>>>>> 6a616ad53a61b543828ddc5136d48c6fb8eb0912
 });
 
 const {
@@ -141,7 +130,6 @@ const L = l + r * 2 + 3; // 滑块实际边长
 
 //使用 canvas 提供的 路径api 画出上图的路径
 const drawPath = (
-<<<<<<< HEAD
   ctx: any,
   x: number,
   y: number,
@@ -162,33 +150,10 @@ const drawPath = (
   ctx.stroke();
   ctx.globalCompositeOperation = "destination-over";
   operation === "fill" ? ctx.fill() : ctx.clip();
-=======
-    ctx: any,
-    x: number,
-    y: number,
-    operation: 'fill' | 'clip'
-) => {
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.arc(x + l / 2, y - r + 2, r, 0.72 * PI, 2.26 * PI);
-    ctx.lineTo(x + l, y);
-    ctx.arc(x + l + r - 2, y + l / 2, r, 1.21 * PI, 2.78 * PI);
-    ctx.lineTo(x + l, y + l);
-    ctx.lineTo(x, y + l);
-    ctx.arc(x + r - 2, y + l / 2, r + 0.4, 2.76 * PI, 1.24 * PI, true);
-    ctx.lineTo(x, y);
-    ctx.lineWidth = 2;
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.stroke();
-    ctx.globalCompositeOperation = 'destination-over';
-    operation === 'fill' ? ctx.fill() : ctx.clip();
->>>>>>> 6a616ad53a61b543828ddc5136d48c6fb8eb0912
 };
 
 //获取随机图片
 const getRandomImgSrc = () => {
-<<<<<<< HEAD
   return (
     imgUrl ||
     `https://picsum.photos/id/${getRandomNumberByRange(
@@ -196,20 +161,10 @@ const getRandomImgSrc = () => {
       1084
     )}/${width}/${height}`
   );
-=======
-    return (
-        imgUrl ||
-        `https://picsum.photos/id/${getRandomNumberByRange(
-            0,
-            1084
-        )}/${width}/${height}`
-    );
->>>>>>> 6a616ad53a61b543828ddc5136d48c6fb8eb0912
 };
 
 //创建图片
 const createImg = (onload: VoidFunction) => {
-<<<<<<< HEAD
   const img = new Image();
   img.crossOrigin = "Anonymous";
   img.onload = onload;
@@ -235,38 +190,10 @@ const createImg = (onload: VoidFunction) => {
   };
   (img as any).setSrc(getRandomImgSrc());
   return img;
-=======
-    const img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = onload;
-    img.onerror = () => {
-        (img as any).setSrc(getRandomImgSrc()); // 图片加载失败的时候重新加载其他图片
-    };
-    (img as any).setSrc = (src: string) => {
-        const isIE = window.navigator.userAgent.indexOf('Trident') > -1;
-        if (isIE) {
-            // IE浏览器无法通过img.crossOrigin跨域，使用ajax获取图片blob然后转为dataURL显示
-            const xhr = new XMLHttpRequest();
-            xhr.onloadend = function (e: any) {
-                const file = new FileReader(); // FileReader仅支持IE10+
-                file.readAsDataURL(e.target.response);
-                file.onloadend = function (e) {
-                    img.src = e?.target?.result as string;
-                };
-            };
-            xhr.open('GET', src);
-            xhr.responseType = 'blob';
-            xhr.send();
-        } else img.src = src;
-    };
-    (img as any).setSrc(getRandomImgSrc());
-    return img;
->>>>>>> 6a616ad53a61b543828ddc5136d48c6fb8eb0912
 };
 
 //拖拽
 const draw = (img: HTMLImageElement) => {
-<<<<<<< HEAD
   const canvasCtx = canvasRef.value.getContext("2d");
   const blockCtx = blockRef.value.getContext("2d");
   // 随机位置创建拼图形状
@@ -282,23 +209,6 @@ const draw = (img: HTMLImageElement) => {
   const ImageData = blockCtx.getImageData(xRef.value - 3, y1, L, L);
   blockRef.value.width = L;
   blockCtx.putImageData(ImageData, 0, y1);
-=======
-    const canvasCtx = canvasRef.value.getContext('2d');
-    const blockCtx = blockRef.value.getContext('2d');
-    // 随机位置创建拼图形状
-    xRef.value = getRandomNumberByRange(L + 10, width - (L + 10));
-    yRef.value = getRandomNumberByRange(10 + r * 2, height - (L + 10));
-    drawPath(canvasCtx, xRef.value, yRef.value, 'fill');
-    drawPath(blockCtx, xRef.value, yRef.value, 'clip');
-    // 画入图片
-    canvasCtx.drawImage(img, 0, 0, width, height);
-    blockCtx.drawImage(img, 0, 0, width, height);
-    // 提取滑块并放到最左边
-    const y1 = yRef.value - r * 2 - 1;
-    const ImageData = blockCtx.getImageData(xRef.value - 3, y1, L, L);
-    blockRef.value.width = L;
-    blockCtx.putImageData(ImageData, 0, y1);
->>>>>>> 6a616ad53a61b543828ddc5136d48c6fb8eb0912
 };
 
 //初始化图片
@@ -312,7 +222,6 @@ const initImg = () => {
 
 //重新设置
 const reset = () => {
-<<<<<<< HEAD
   const canvasCtx = canvasRef.value.getContext("2d");
   const blockCtx = blockRef.value.getContext("2d");
   // 重置样式
@@ -332,27 +241,6 @@ const reset = () => {
 const handleRefresh = () => {
   reset();
   typeof onRefresh === "function" && onRefresh();
-=======
-    const canvasCtx = canvasRef.value.getContext('2d');
-    const blockCtx = blockRef.value.getContext('2d');
-    // 重置样式
-    sliderLeft.value = 0;
-    sliderClass.value = 'sliderContainer';
-    blockRef.value.width = width;
-    blockRef.value.style.left = 0 + 'px';
-    // 清空画布
-    canvasCtx.clearRect(0, 0, width, height);
-    blockCtx.clearRect(0, 0, width, height);
-    onBeforeRefresh && onBeforeRefresh();
-    // 重新加载图片
-    isLoading.value = true;
-    imgRef.value.setSrc(getRandomImgSrc());
-};
-
-const handleRefresh = () => {
-    reset();
-    typeof onRefresh === 'function' && onRefresh();
->>>>>>> 6a616ad53a61b543828ddc5136d48c6fb8eb0912
 };
 
 const verify = () => {
@@ -378,7 +266,6 @@ const handleDragStart = function (e: any) {
 
 //拖拽移动
 const handleDragMove = (e: any) => {
-<<<<<<< HEAD
   if (!isMouseDownRef.value) return false;
   e.preventDefault();
   const eventX = e.clientX || e.touches[0].clientX;
@@ -392,26 +279,10 @@ const handleDragMove = (e: any) => {
   sliderClass.value = "sliderContainer sliderContainer_active";
   trailRef.value.push(moveY);
   onDraw && onDraw(blockLeft);
-=======
-    if (!isMouseDownRef.value) return false;
-    e.preventDefault();
-    const eventX = e.clientX || e.touches[0].clientX;
-    const eventY = e.clientY || e.touches[0].clientY;
-    const moveX = eventX - originXRef.value;
-    const moveY = eventY - originYRef.value;
-    if (moveX < 0 || moveX + 38 >= width) return false;
-    sliderLeft.value = moveX;
-    const blockLeft = ((width - 40 - 20) / (width - 40)) * moveX;
-    blockRef.value.style.left = blockLeft + 'px';
-    sliderClass.value = 'sliderContainer sliderContainer_active';
-    trailRef.value.push(moveY);
-    onDraw && onDraw(blockLeft);
->>>>>>> 6a616ad53a61b543828ddc5136d48c6fb8eb0912
 };
 
 //拖拽结束
 const handleDragEnd = (e: any) => {
-<<<<<<< HEAD
   if (!isMouseDownRef.value) return false;
   isMouseDownRef.value = false;
   const eventX = e.clientX || e.changedTouches[0].clientX;
@@ -428,29 +299,6 @@ const handleDragEnd = (e: any) => {
       sliderClass.value = "sliderContainer sliderContainer_fail";
       textTip.value = "请再试一次";
       reset();
-=======
-    if (!isMouseDownRef.value) return false;
-    isMouseDownRef.value = false;
-    const eventX = e.clientX || e.changedTouches[0].clientX;
-    if (eventX === originXRef.value) return false;
-    sliderClass.value = 'sliderContainer';
-    const { spliced, verified } = onCustomVertify
-        ? onCustomVertify(verify())
-        : verify();
-    if (spliced) {
-        if (verified) {
-            sliderClass.value = 'sliderContainer sliderContainer_success';
-            typeof onSuccess === 'function' && onSuccess();
-        } else {
-            sliderClass.value = 'sliderContainer sliderContainer_fail';
-            textTip.value = '请再试一次';
-            reset();
-        }
-    } else {
-        sliderClass.value = 'sliderContainer sliderContainer_fail';
-        typeof onFail === 'function' && onFail();
-        setTimeout(reset.bind(this), 1000);
->>>>>>> 6a616ad53a61b543828ddc5136d48c6fb8eb0912
     }
   } else {
     sliderClass.value = "sliderContainer sliderContainer_fail";

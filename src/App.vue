@@ -10,7 +10,7 @@
     />
   </MAvatar> -->
   <!-- <MyImg></MyImg> -->
-  <!-- <MySlider :on-success="success" :onFail="fail"></MySlider> -->
+  <MySlider :on-success="success" :onFail="fail"></MySlider>
   <!-- <MyDropDown :option-data="dropData.dropArr" width="300px" size="18px"></MyDropDown> -->
   <!-- <MySearch></MySearch> -->
   <!-- <button @click="openSeachBar">显示搜索框</button>
