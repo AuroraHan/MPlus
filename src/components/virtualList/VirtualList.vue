@@ -46,11 +46,15 @@ onMounted(() => {
     start.value = 0;
     end.value = start.value + visibleCount.value;
     virtualList.value.addEventListener('scroll', (event: Event) => {
-        scrollEvent(event.target)
+        scrollEvent(event.target as Element)
     })
+    // const observer = new IntersectionObserver(() => {
+    //     console.log(virtualList.value, '6666')
+    // })
+    // observer.observe(virtualList.value)
 })
 
-const scrollEvent = (target: any) => {
+const scrollEvent = (target: Element) => {
     const scrollTop = target.scrollTop;
     start.value = ~~(scrollTop / props.itemSize);
     end.value = start.value + visibleCount.value;
