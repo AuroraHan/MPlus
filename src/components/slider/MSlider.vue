@@ -1,33 +1,41 @@
 <template>
-  <div className="vertifyWrap" :style="{
+  <div class="vertifyWrap" :style="{
     width: width + 'px',
     margin: '0 auto',
     display: visible ? '' : 'none',
   }" @mousemove="handleDragMove" @mouseup="handleDragEnd" @touchmove="handleDragMove" @touchend="handleDragEnd">
+
+    <!-- 图片canvas -->
     <div className="canvasArea">
       <canvas ref="canvasRef" :width="width" :height="height"></canvas>
-      <canvas ref="blockRef" className="block" :width="width" :height="height" @mousedown="handleDragStart"
+      <canvas ref="blockRef" class="block" :width="width" :height="height" @mousedown="handleDragStart"
         @touchstart="handleDragStart"></canvas>
     </div>
+
+    <!-- 滑块移动 -->
     <div :className="sliderClass" :style="{
       pointerEvents: isLoading ? 'none' : 'auto',
       width: width + 'px',
     }">
-      <div className="sliderMask" :style="{ width: sliderLeft + 'px' }">
+      <div class="sliderMask" :style="{ width: sliderLeft + 'px' }">
         <div className="slider" :style="{ left: sliderLeft + 'px' }" @mousedown="handleDragStart"
           @touchstart="handleDragStart">
-          <div className="sliderIcon">&rarr;</div>
+          <div class="sliderIcon">&rarr;</div>
         </div>
       </div>
-      <div className="sliderText">{{ textTip }}</div>
+      <div class="sliderText">{{ textTip }}</div>
     </div>
+
+    <!-- 刷新按钮 -->
     <div className="refreshIcon" @click="handleRefresh" :style="{ backgroundImage: `url(${refreshIcon})` }"></div>
-    <div className="loadingContainer" :style="{
+
+    <!--  -->
+    <div class="loadingContainer" :style="{
       width: width + 'px',
       height: height + 'px',
       display: isLoading ? '' : 'none',
     }">
-      <div className="loadingIcon"></div>
+      <div class="loadingIcon"></div>
       <span>加载中...</span>
     </div>
   </div>
