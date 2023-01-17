@@ -15,6 +15,9 @@ declare module '@vue/runtime-core' {
     MDropdown: typeof import('./src/components/dropdown/MDropdown.vue')['default']
     MSlider: typeof import('./src/components/slider/MSlider.vue')['default']
     Mytest: typeof import('./src/components/mytest/index.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     SearchBar: typeof import('./src/components/search/SearchBar.vue')['default']
+    VirtualList: typeof import('./src/components/virtualList/VirtualList.vue')['default']
   }
 }
