@@ -4,7 +4,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { useNamespace } from "@/hooks/use-namespace";
 import useSeach from "@/hooks/use-Search/index";
 const ns = useNamespace("main");

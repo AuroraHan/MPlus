@@ -1,4 +1,4 @@
-import { SeachBarCreator } from '@/components/search/SearchBar';
+import { SeachBarCreator } from '@/components/Search/SearchBar';
 
 const searchBar = new SeachBarCreator();
 
