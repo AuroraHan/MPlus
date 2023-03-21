@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     MAvatar: typeof import('./src/components/Avatar/MAvatar.vue')['default']
     MCard: typeof import('./src/components/Card/MCard.vue')['default']
     MDropdown: typeof import('./src/components/DropDown/MDropdown.vue')['default']
+    Message: typeof import('./src/components/Message/Message.vue')['default']
     MSlider: typeof import('./src/components/Slider/MSlider.vue')['default']
     Mytest: typeof import('./src/components/mytest/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
