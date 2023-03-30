@@ -7,20 +7,16 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElCol: typeof import('element-plus/es')['ElCol']
-    ElRow: typeof import('element-plus/es')['ElRow']
-    MAvatar: typeof import('./src/components/Avatar/MAvatar.vue')['default']
-    MCard: typeof import('./src/components/Card/MCard.vue')['default']
-    MDropdown: typeof import('./src/components/DropDown/MDropdown.vue')['default']
+    MAvatar: typeof import('./src/components/avatar/MAvatar.vue')['default']
+    MCard: typeof import('./src/components/card/MCard.vue')['default']
+    MDropdown: typeof import('./src/components/dropdown/MDropdown.vue')['default']
     Message: typeof import('./src/components/Message/Message.vue')['default']
-    MSlider: typeof import('./src/components/Slider/MSlider.vue')['default']
+    MSlider: typeof import('./src/components/slider/MSlider.vue')['default']
     Mytest: typeof import('./src/components/mytest/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SearchBar: typeof import('./src/components/Search/SearchBar.vue')['default']
+    SearchBar: typeof import('./src/components/search/SearchBar.vue')['default']
     SearchBox: typeof import('./src/components/SearchBox/SearchBox.vue')['default']
-    Testvm: typeof import('./src/components/testvm.vue')['default']
-    VirtualList: typeof import('./src/components/VirtualList/VirtualList.vue')['default']
+    VirtualList: typeof import('./src/components/virtualList/VirtualList.vue')['default']
   }
 }
