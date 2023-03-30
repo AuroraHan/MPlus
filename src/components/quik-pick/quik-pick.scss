@@ -1,0 +1,102 @@
+// @import "../../../scss/index.scss";
+$ns: quick-pick;
+$span:8px;
+$scrollbar-color:var(--intent-color-theme-4);
+
+@include block($ns){
+    width: 550px;
+    background-color: rgb(164, 162, 162);
+    padding: 5px;
+
+    &>input{
+        width: 100%;
+        height: 28px;
+        padding: 0;
+        border-width: 0;
+        border-radius: 2px;
+        background-color: rgb(133, 76, 76);
+        color: #fff;
+        outline: none;
+        text-indent: $span;
+        border: 1px solid red;
+    }
+    input::-webkit-input-placeholder{
+        color: var(--text-color-disabled-1);
+        font-size: 12px;
+    }
+
+    @include element(list){
+        margin-top: 4px;
+        max-height:50vh;
+        overflow: auto;
+        &::-webkit-scrollbar {width: 10px;}
+            
+        &::-webkit-scrollbar-track {
+        background:$scrollbar-color;
+        border: 1px solid $scrollbar-color;
+        border-right: none;
+        }
+            
+        &::-webkit-scrollbar-thumb {
+            background: $scrollbar-color;
+        }
+            
+        &::-webkit-scrollbar-thumb:hover {
+            background: $scrollbar-color;
+        }
+            
+        &::-webkit-scrollbar-thumb:active {
+             background: var(--text-color-disabled-1);
+        }
+    }
+}
+
+@include block(#{$ns}-item){
+    height: 40px;
+    background-color: rgb(99, 172, 227);
+    display: flex;
+    padding: 0 4px;
+    justify-content: space-between;
+
+    @include element(left){
+        @include modifier(label){
+            color: burlywood;
+            font-size: 14px;
+        }
+        @include modifier(desc){
+            color: burlywood;
+            font-size: 13px;
+        }
+    }
+
+    @include element(right){
+        display: flex;
+        align-items: center;
+
+        @include modifier(key){
+            font-size: 13px;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-right: 3px;
+            background-color: var(--text-color-secondary-1);
+            color: var(--text-color-disabled-1);
+        }
+
+        @include modifier(icon){
+            // color: red;
+            cursor: pointer;
+        }
+    }
+}
+
+@include block(#{$ns}-item-enter){
+    background-color: pink !important;
+}
+
+@include block(#{$ns}-no-data){
+    color: var(--text-color-regular-1);
+    font-size: var(--font-size-base);
+    background-color: var(--intent-color-theme-3);
+    padding-left: $span;
+    border-radius: 2px;
+}

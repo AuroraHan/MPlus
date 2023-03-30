@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     Message: typeof import('./src/components/Message/Message.vue')['default']
     MSlider: typeof import('./src/components/slider/MSlider.vue')['default']
     Mytest: typeof import('./src/components/mytest/index.vue')['default']
+    QuikPick: typeof import('./src/components/quik-pick/quik-pick.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchBar: typeof import('./src/components/search/SearchBar.vue')['default']
