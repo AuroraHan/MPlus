@@ -359,6 +359,11 @@ const changeToChinese = (Num: any) => {
   }
   return newchar;
 };
+
+// 将 RGB 转换为十六进制
+const getColorFun = (r: number, g: number, b: number) => {
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+};
 export {
   isEmail,
   isMobile,
@@ -371,4 +376,5 @@ export {
   random,
   numberToChinese,
   changeToChinese,
+  getColorFun,
 };
