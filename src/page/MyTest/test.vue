@@ -13,13 +13,12 @@
   <!-- <MyImg></MyImg> -->
   <!-- <MySlider :on-success="success" :onFail="fail"></MySlider> -->
   <!-- <MyDropDown :option-data="dropData.dropArr" width="300px" size="18px"></MyDropDown> -->
-<!-- <button @click="openSeachBar">显示搜索框</button>
+  <!-- <button @click="openSeachBar">显示搜索框</button>
                                                                                                                                             <button @click="closeSeachBar">隐藏搜索框搜索框</button> -->
-<!-- <VirtualList :list-data="listData" :item-size="50"></VirtualList>
+  <!-- <VirtualList :list-data="listData" :item-size="50"></VirtualList>
   <VirtualList :list-data="listData" :item-size="50"></VirtualList>
                                                               <div ref="btn" id="btn">ssss</div> -->
   <!-- <MyMessage></MyMessage> -->
-  <quikPick :options="quik"></quikPick>
 </template>
 
 <script setup lang='ts'>
