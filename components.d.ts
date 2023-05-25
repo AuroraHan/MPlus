@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     MCard: typeof import('./src/components/card/MCard.vue')['default']
     MDropdown: typeof import('./src/components/dropdown/MDropdown.vue')['default']
     Message: typeof import('./src/components/Message/Message.vue')['default']
+    MGird: typeof import('./src/components/gird/MGird.vue')['default']
     MSlider: typeof import('./src/components/slider/MSlider.vue')['default']
     Mytest: typeof import('./src/components/mytest/index.vue')['default']
     QuikPick: typeof import('./src/components/quik-pick/quik-pick.vue')['default']

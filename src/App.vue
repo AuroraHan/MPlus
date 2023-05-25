@@ -1,6 +1,8 @@
 <template>
   <div :class="ns.b()">
-    <div :class="ns.e('left')">left</div>
+    <div :class="ns.e('left')">
+      <MyGird></MyGird>
+    </div>
     <div :class="ns.e('middle')">
       <router-view></router-view>
     </div>
@@ -12,6 +14,7 @@
 import { ref, onMounted } from "vue";
 import { useNamespace } from "@/hooks/use-namespace";
 import useSeach from "@/hooks/use-Search/index";
+import MyGird from '@/components/gird/MGird.vue'
 const ns = useNamespace("main");
 
 //全局搜索
@@ -34,8 +37,8 @@ $ns: main;
   height: 400px;
 
   @include element(left) {
-    width: 200px;
-    background-color: chartreuse;
+    width: 321px;
+    background-color: rgb(163, 233, 240);
     flex-shrink: 0;
   }
 
