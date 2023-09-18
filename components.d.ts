@@ -7,6 +7,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElUpload: typeof import('element-plus/es')['ElUpload']
+    ImgUpload: typeof import('./src/components/img-upload/img-upload.vue')['default']
     MAvatar: typeof import('./src/components/avatar/MAvatar.vue')['default']
     MCard: typeof import('./src/components/card/MCard.vue')['default']
     MDropdown: typeof import('./src/components/dropdown/MDropdown.vue')['default']
